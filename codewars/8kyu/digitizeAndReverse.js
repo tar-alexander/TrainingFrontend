@@ -1,0 +1,1 @@
+let digitize = n => Array.from(String(n), Number).reverse();
