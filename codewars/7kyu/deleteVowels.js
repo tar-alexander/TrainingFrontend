@@ -1,0 +1,1 @@
+const disemVowel = (str) => str.replace(/[aeiou]/ig, '');
