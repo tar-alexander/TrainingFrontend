@@ -1,31 +1,32 @@
 body {
-	font-family: sans-serif;
+	font-size: small;
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	line-height: 1.6em;
 }
 
 h1, h2 {
-	color: gray;
+	color: #007e7e;
 }
 
 h1 {
-	border-bottom: 1px solid black;
+	font-size: 150%;
 }
 
-p {
-	color: maroon;
+h2 {
+	font-size: 130%;
 }
 
-.greentea {
-	color: green;
-}
-
-p.raspberry {
-	color: blue;
-}
-
-p.blueberry {
-	color: purple;
-}
-
-p.cranberry {
-	color: red;
+.guarantee {
+	background-color: #a7cece;
+	margin: 30px;
+	margin-right: 250px;
+	border: 2px dotted black;
+	padding: 25px;
+	padding-left: 80px;
+	line-height: 1.9em;
+	color: #444;
+	font-family: Georgia, Times New Roman, Times, serif;
+	background-image: url(../images/background.gif);
+	background-repeat: no-repeat;
+	background-position: top left;
 }
