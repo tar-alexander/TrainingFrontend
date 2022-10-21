@@ -1,7 +1,5 @@
 body {
-	font-size: small;
-	font-family: Verdana, Helvetica, Arial, sans-serif;
-	line-height: 1.6em;
+	font: small/1.6em Verdana, Helvetica, Arial, sans-serif;
 }
 
 h1, h2 {
@@ -16,17 +14,79 @@ h2 {
 	font-size: 130%;
 }
 
-.guarantee {
-	background-color: #a7cece;
+#main {
+	overflow: auto;
+}
+
+#main-info {
+	position: absolute;
+	width: 800px;
+}
+
+#guarantee {
 	margin: 30px;
 	margin-right: 250px;
-	border: 2px dotted black;
+	border: 2px dashed white;
+	border-radius: 0em 2em 0em 2em;
 	padding: 25px;
 	padding-left: 80px;
 	line-height: 1.9em;
 	color: #444;
 	font-family: Georgia, Times New Roman, Times, serif;
-	background-image: url(../images/background.gif);
-	background-repeat: no-repeat;
-	background-position: top left;
+	background: #a7cece url(../images/background.gif) top left no-repeat;
+}
+
+#specials {
+	width: 250px;
+	text-align: center;
+	border: thin solid #007ece;
+	background: url(../images/cocktail.gif) top left repeat-x;
+	line-height: 1;
+	color: black;
+	padding: 0px 20px 20px 20px;
+	margin-left: 810px;
+}
+
+#specials h2, .drink {
+	color: black;
+}
+
+#specials h3 {
+	color: #d12c47;
+}
+
+.drink {
+	padding: 10px 40px;
+}
+
+#specials-footer {
+	padding-bottom: 0px;
+}
+
+#specials a:link {
+	color: #007e7e;
+}
+
+#specials a:visited {
+	color: #333;
+}
+
+#specials a:hover, #specials a:focus {
+	color: white;
+	background: #007e7e; 
+}
+
+#footer {
+	font-size: 50%;
+	line-height: normal;
+	text-align: center;
+	margin-top: 30px;
+}
+
+.title-song {
+	font-style: italic;
+}
+
+.artist-song {
+	font-weight: bold;
 }
