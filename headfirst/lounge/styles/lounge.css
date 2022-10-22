@@ -15,36 +15,35 @@ h2 {
 }
 
 #main {
-	overflow: auto;
 }
 
 #main-info {
-	position: absolute;
-	width: 800px;
 }
 
 #guarantee {
 	margin: 30px;
 	margin-right: 250px;
-	border: 2px dashed white;
-	border-radius: 0em 2em 0em 2em;
+	border: 1px dashed white;
+	border-radius: 0em 2em;
 	padding: 25px;
 	padding-left: 80px;
 	line-height: 1.9em;
 	color: #444;
+	font-style: italic;
 	font-family: Georgia, Times New Roman, Times, serif;
 	background: #a7cece url(../images/background.gif) top left no-repeat;
 }
 
 #specials {
-	width: 250px;
+	float: right;
+	width: 200px;
 	text-align: center;
 	border: thin solid #007ece;
 	background: url(../images/cocktail.gif) top left repeat-x;
 	line-height: 1;
 	color: black;
 	padding: 0px 20px 20px 20px;
-	margin-left: 810px;
+	margin-left: 20px;
 }
 
 #specials h2, .drink {
@@ -56,7 +55,6 @@ h2 {
 }
 
 .drink {
-	padding: 10px 40px;
 }
 
 #specials-footer {
