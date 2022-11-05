@@ -35,6 +35,18 @@ td, th {
   padding: 5px;
 }
 
+th {
+  background-color: #cc6600;
+}
+
+tr:nth-child(odd) {
+  background-color: #fcba7a;
+}
+
+.inner td {
+  background-color: white;
+}
+
 caption {
   font-style: italic;
   padding-top: 8px;
