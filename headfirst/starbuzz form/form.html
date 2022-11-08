@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Starbuzz Bean Machine</title>
+  </head>
+  <body>
+    <h1>Starbuzz Bean Machine</h1>
+    <h2>Fill the form and click "Make order" to create order</h2>
+    <form action="http://starbuzzcoffee.com/processorder.php" method="POST">
+      <p> Choose coffee:
+        <select name="coffee-type">
+          <option>Home</option>
+          <option>Bolyvia</option>
+          <option>Gwatemmala</option> 
+          <option>Kenia</option> 
+        </select> <br>
+        Type:<br> 
+        <input type="radio" name="coffee" value="Zerno">Zerno<br> 
+        <input type="radio" name="coffee" value="Molot">Molot<br>
+
+        Other services:<br> 
+        <input type="checkbox" name="sevices" value="Present">Present<br>
+        <input type="checkbox" name="sevices" value="Delivery">Delivery<br>
+
+        Name: <input type="text" name="name"><br>
+        Address: <input type="text" name="address"><br>
+        City: <input type="text" name="city"><br>
+        Country: <input type="text" name="country"><br>
+        ZIP: <input type="text" name="zip"><br>
+        Phone-number: <input type="tel" name="phone"><br>
+
+        Comment: <textarea></textarea><br>
+
+        <input type="Submit" name="" value="Order">
+      </p>
+    </form>
+  </body>
+</html>
+

@@ -4,6 +4,8 @@
 	     url("EmblemaOne-Regular.ttf"); 
 }
 body {
+  margin: 0px auto;
+  width: 800px;
   font-family:     Verdana, Geneva, Arial, sans-serif;
   font-size:       small;
 }
@@ -39,12 +41,25 @@ th {
   background-color: #cc6600;
 }
 
-tr:nth-child(odd) {
+.cellcolor {
   background-color: #fcba7a;
 }
 
-.inner td {
-  background-color: white;
+table > table > tr {
+}
+
+table table td:nth-child(1) {
+  font-weight: bold;
+}
+
+table table tr:nth-child(1) {
+  background-color: #fcba7a;
+}
+
+li {
+  list-style-image: url("images/backpack.gif");
+  padding-top: 5px;
+  margin-left: 20px;
 }
 
 caption {
