@@ -1,0 +1,40 @@
+body {
+  background: #efe5d0 url(images/background.gif) top left;
+  margin: 20px;
+}
+
+#main {
+  width: 650px;
+  margin: 0px auto;
+}
+
+form {
+  display: table;
+  width: 630px;
+  padding: 10px;
+  border: thin dotted #7e7e7e;
+  background-color: #e1ceb8;
+}
+
+form textarea {
+  width: 500px;
+  height: 200px;
+}
+
+.tableRow {
+  display: table-row;
+}
+
+.tableRow p {
+  display: table-cell;
+  vertical-align: top;
+  padding: 3px;
+}
+
+div.tableRow p:first-child {
+  text-align: right;
+}
+
+p.heading {
+  font-weight: bold;
+}

@@ -3,50 +3,111 @@
   <head>
     <meta charset="utf-8">
     <title>Starbuzz Bean Machine</title>
+    <link rel="stylesheet" type="text/css" href="starbuzz.css">
+    <link rel="stylesheet" type="text/css" href="styledform.css">
   </head>
   <body>
-    <h1>Starbuzz Bean Machine</h1>
-    <h2>Fill the form and click "Make order" to create order</h2>
-    <form action="http://starbuzzcoffee.com/processorder.php" method="get">
-      <p> Choose coffee:
-        <select name="beans">
-          <option value="House Blend">House Blend</option>
-          <option value="Bolivia">Shade Grown Bolivia Supremo</option>
-          <option value="Guatemala">Guatemala</option> 
-          <option value="Kenya">Kenya</option> 
-        </select>
-      </p>
-      <p>Type:<br> 
-        <input type="radio" name="beantype" value="whole" checked="checked">Whole bean<br> 
-        <input type="radio" name="beantype" value="ground">Ground<br>
-      </p>
-
-      <p>Number of bags:
-        <input type="number" name="bags" min="1" max="10">
-      </p>
-
-      <p>Deliver to date:
-        <input type="date" name="date">
-      </p>
-
-      <p>Other services:<br> 
-        <input type="checkbox" name="extras[0]" value="giftwrap"> Gift wrap<br>
-        <input type="checkbox" name="extras[0]" value="catalog" checked="checked"> Deliver catalog with order<br>
-      </p>
-      <p>Ship to:<br>
-        Name: <input type="text" name="name"><br>
-        Address: <input type="text" name="address"><br>
-        City: <input type="text" name="city"><br>
-        Country: <input type="text" name="state"><br>
-        ZIP: <input type="text" name="zip"><br>
-        Phone-number: <input type="tel" name="phone"><br>
-      </p>
-      
-      <p>Comment: <textarea name="comments"></textarea><br>
-      </p>
-        <input type="Submit" value="Order">
-      </p>
-    </form>
+    <div id="main">
+      <h1>Starbuzz Bean Machine</h1>
+      <h2>Fill the form and click "Make order" to create order</h2>
+      <form action="http://starbuzzcoffee.com/processorder.php" method="post">
+        <div class="tableRow">
+          <p> Choose coffee:</p>
+          <p>
+            <select name="beans">
+              <option value="House Blend">House Blend</option>
+              <option value="Bolivia">Shade Grown Bolivia Supremo</option>
+              <option value="Guatemala">Guatemala</option> 
+              <option value="Kenya">Kenya</option> 
+            </select>
+          </p>
+        </div>
+        <div class="tableRow">
+          <p>Type:</p>
+          <p>
+            <input type="radio" name="beantype" value="whole" id="whole" checked="checked">
+              <label for="whole">Whole bean</label> 
+            <input type="radio" name="beantype" value="ground" id="ground">
+              <label for="ground">Ground</label>
+          </p>
+        </div>
+        <div class="tableRow">
+          <p>
+            <label for="bags">Number of bags:</label>
+          </p>
+          <p>
+            <input type="number" name="bags" id="bags" min="1" max="10" value="1">
+          </p>
+        </div>
+        <div class="tableRow">
+          <p>Deliver to date:</p>
+          <p>
+            <input type="date" name="date" required>
+          </p>
+        </div>
+        <div class="tableRow">
+          <p>Other services:</p>
+          <p>
+            <input type="checkbox" name="extras[0]" value="giftwrap" id="giftwrap">
+              <label for="giftwrap">Gift wrap</label>
+            <input type="checkbox" name="extras[0]" value="catalog" id="catalog" checked="checked">
+              <label for="catalog">Deliver catalog with order</label>
+          </p>
+        </div>
+        <div class="tableRow">
+          <p>Ship to:</p>
+          <p></p>
+        </div>
+        <div class="tableRow">
+          <p>Name:</p>
+          <p>
+            <input type="text" name="name" placeholder="Ivan Ivanov" required>
+          </p>
+        </div>
+        <div class="tableRow">
+          <p>Address:</p>
+          <p>
+            <input type="text" name="address" placeholder="Gagarina, 16" required>
+          </p>
+        </div>
+        <div class="tableRow">
+          <p>City:</p>
+          <p>
+            <input type="text" name="city" placeholder="Astana" required>
+          </p>
+        </div>
+        <div class="tableRow">
+          <p>Country:</p>
+          <p>
+            <input type="text" name="state" placeholder="Georgia" required>
+          </p>      
+        </div>
+        <div class="tableRow">
+          <p>ZIP:</p>
+          <p>
+            <input type="text" name="zip" placeholder="444444" required>
+          </p>
+        </div>
+        <div class="tableRow">
+          <p>Phone-number:</p>
+          <p>
+            <input type="tel" name="phone" placeholder="8(888)888-88-88" required>
+          </p>
+        </div>
+        <div class="tableRow">
+          <p>Comment:</p>
+          <p>
+            <textarea name="comments" placeholder="Comment"></textarea><br>
+          </p>
+        </div>
+        <div class="tableRow">
+          <p></p>
+          <p>
+            <input type="Submit" value="Order">
+          </p>
+        </div>
+      </form>
+    </div>
   </body>
 </html>
 
