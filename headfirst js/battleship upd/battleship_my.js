@@ -18,10 +18,8 @@ var ships = [{locations: [,,], hits: [,,]},
 var model = {
 	boardSize: 7,
 	numShips: 3,
-	ships: [ { locations: [0, 0, 0], hits: ["","",""], neighbourhood: []},
-			 { locations: [0, 0, 0], hits: ["","",""], neighbourhood: []},
-		   	 { locations: [0, 0, 0], hits: ["","",""], neighbourhood: []}
-	],
+	ships: [ 	],
+	collisions: [""],	
 	shipsSunk: 0,
 	shipLength: 3,
 	fire: function(guess) {
@@ -30,16 +28,12 @@ var model = {
 
 			let index = ships[i].locations.indexOf(guess);
 			if (index != -1) {
-				if (ships[i].hits[index] === "hit") {
-					alert("You've already hit this location!")
-				} else {
-					ships[i].hits[index] = "hit";
-					view.displayMove(guess, "hit");
-					view.displayMessage("HIT!");
-					if (this.isSunk(ships[i])) {
-						this.shipsSunk++;
-						view.displayMessage("You've sank my battleship!");
-					}
+				ships[i].hits[index] = "hit";
+				view.displayMove(guess, "hit");
+				view.displayMessage("HIT!");
+				if (this.isSunk(ships[i])) {
+					this.shipsSunk++;
+					view.displayMessage("You've sank my battleship!");
 				}
 				return true;
 			}
@@ -54,65 +48,59 @@ var model = {
 	generateShipLocations: function() {
 		let locations;
 		for (let i = 0; i < this.numShips; i++) {
-			do {
-				locations = this.generateShip();
-			} while (this.collision(locations));
-			this.ships[i].locations = locations;
-			this.nearby(this.ships[i]);
+			this.ships[i].locations = this.generateShip();
+			setCollisions(this.ships[i]);
 		}
 	},
 	generateShip: function() {
-		let direction = Math.floor(Math.random() * 2);
-		let row, col;
-		var newShipLocations = [];
+		let i = 0;
+		let directions = Math.floor(Math.random() * 2);
+		let place2;
+		let place3;
 
-		if (direction === 0) {
-			row = Math.floor(Math.random() * (this.boardSize - this.shipLength));
-			col = Math.floor(Math.random() * (this.boardSize));
-		} else {
-			row = Math.floor(Math.random() * (this.boardSize));
-			col = Math.floor(Math.random() * (this.boardSize - this.shipLength));
-		}
-
-		for (let i = 0; i < this.shipLength; i++) {
-			if (direction === 0) {
-				newShipLocations.push((row + i) + "" + col);
-			} else {
-				newShipLocations.push(row + "" + (col + i));
+		while (true) {
+			let placeX = Math.floor(Math.random() * 7);
+			let placeY = Math.floor(Math.random() * 7);
+			let place1 = "" + placeX + placeY;
+			if (this.checkCollision(place1)) {
+				if (directions == 0) {
+					place2 = "" + placeX + (placeY + 1);
+					place3 = "" + placeX + (placeY + 2);
+				} else if (directions == 1) {
+					place2 = "" + (placeX + 1) + placeY;
+					place3 = "" + (placeX + 2) + placeY;
+				}
+				if (this.checkCollision(place2) && this.checkCollision(place3)) {
+					return [place1, place2, place3];
+				}
 			}
 		}
-		
-		return newShipLocations;
 	},
-	nearby: function(ship) {
-		let neighbourhood = [];
+	checkCollision: function(place) {
+		let checkCollisions = this.collisions.indexOf(place);
+
+		return (!checkPlace(place[0], place[1])) && this.checkShips() && (checkCollisions == -1);
+	},
+	checkShips: function(place) {
+		for (let i = 0; i < this.numShips; i++) {
+			if (ships[i].locations.indexOf(place) != -1)
+				return false;
+		} 
+		return true;
+	},
+	setCollisions: function(ship) {
 		let locations = ship.locations;
 		for (let i = 0; i < locations.length; i++) {
 			for (let x = -1; x < 2; x++) {
 				for (let y = -1; y < 2; y++) {
-					if (!(x == 0 && y == 0)) {
-						let newX = Number(locations[i][0]) + x;
-						let newY = Number(locations[i][1]) + y
-						if ((!checkPlace(newX, newY)) && ship.locations.indexOf("" + newX + newY) == -1
-							&& ship.neighbourhood.indexOf("" + newX + newY) == -1) {
-							ship.neighbourhood.push("" + newX + newY);
+					if (x != 0 && y != 0) {
+						if (!checkPlace(locations[i][0] + x, locations[i][1] + y)) {
+							this.collisions.add("" + (locations[i][0] + x) + locations[i][1] + y);
 						}
 					}
 				}
 			}
 		}
-	},
-
-	collision: function(locations) {
-		for (let i = 0; i < this.numShips; i++) {
-			let ship = model.ships[i];
-			for (let j = 0; j < locations.length; j++) {
-				if (ship.locations.indexOf(locations[j]) >= 0 ||
-					ship.neighbourhood.indexOf(locations[j]) >= 0)
-					return true;
-			}
-		}
-		return false;
 	}
 }
 
