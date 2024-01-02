@@ -1,4 +1,4 @@
-var isSquare = function(n){
+const isSquare = function(n) {
   let result = 0;
   while (result <= n) {
     if (result * result == n)
@@ -7,3 +7,5 @@ var isSquare = function(n){
   }
   return false;
 }
+
+const isSquareBetter = (n) => Math.sqrt(n) % 1 === 0;
