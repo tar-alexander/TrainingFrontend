@@ -1,0 +1,1 @@
+console.log(Object.keys(goods).concat(Object.values(goods)));

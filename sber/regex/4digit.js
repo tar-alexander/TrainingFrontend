@@ -1,0 +1,1 @@
+console.log(values.some(elem => /^[0-9]{4}$/.test(elem)));

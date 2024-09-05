@@ -1,0 +1,1 @@
+console.log(emails.match(/[a-z][a-z0-9-]*@[a-z]+\.[a-z]+/ig))

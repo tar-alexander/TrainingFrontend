@@ -1,0 +1,1 @@
+console.log(Object.assign(article,author));

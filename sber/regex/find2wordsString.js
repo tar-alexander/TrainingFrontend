@@ -1,0 +1,1 @@
+console.log(users.findIndex(elem => /\w+\s\w+/.test(elem.role)));

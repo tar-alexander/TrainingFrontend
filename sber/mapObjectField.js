@@ -1,0 +1,1 @@
+console.log(tasks.map(elem => elem.title));

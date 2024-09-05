@@ -1,0 +1,1 @@
+console.log(partNumbers.filter(elem => /[0-9]{2}[a-z]{2}$/i.test(elem) === true));
